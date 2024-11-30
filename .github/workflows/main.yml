@@ -1,0 +1,56 @@
+name: Laboratorio DevOps 
+2024-2
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  setup-environment:
+    name: Configuración del entorno Python
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout del repositorio
+      uses: actions/checkout@v3
+
+    - name: Configurar Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+
+  run-tests:
+    name: Pruebas automatizadas
+    runs-on: windows-latest
+    needs: setup-environment
+
+    steps:
+    - name: Checkout del repositorio
+      uses: actions/checkout@v3
+
+    - name: Instalar dependencias
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Ejecutar pruebas con pytest
+      run: pytest
+
+  analyze-code:
+    name: Análisis de código
+    runs-on: windows-latest
+    needs: run-tests
+
+    steps:
+    - name: Checkout del repositorio
+      uses: actions/checkout@v3
+
+    - name: Instalar flake8
+      run: pip install flake8
+
+    - name: Ejecutar flake8
+      run: flake8 .
