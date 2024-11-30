@@ -5,10 +5,10 @@ def test_sumar():
     assert sumar(3, 5) == 8
 
 def test_restar():
-    assert restar(10, 4) == 6
+    assert restar(15, 6) == 9
 
 def test_multiplicar():
-    assert multiplicar(6, 7) == 42
+    assert multiplicar(9, 8) == 72
 
 def test_dividir():
     assert dividir(8, 2) == 4
