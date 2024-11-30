@@ -19,7 +19,7 @@ def dividir(a, b):
 
 if __name__ == "__main__":
     
-    print("Suma:", sumar(3, 5))
-    print("Resta:", restar(10, 4))
-    print("Multiplicación:", multiplicar(6, 7))
-    print("División:", dividir(8, 2))
+    print("Suma:", sumar(18, 21))
+    print("Resta:", restar(34, 26))
+    print("Multiplicación:", multiplicar(9, 3))
+    print("División:", dividir(10, 5))
