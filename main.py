@@ -21,7 +21,7 @@ def dividir(a, b):
 
 
 if __name__ == "__main__":
-    
+    # Pruebas básicas en el main
     print("Suma:", sumar(18, 21))
     print("Resta:", restar(34, 26))
     print("Multiplicación:", multiplicar(9, 3))
